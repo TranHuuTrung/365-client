@@ -1,0 +1,138 @@
+$main-color: #f25c2a;
+.products-page {
+    background-color: #eee;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    .left-bar-part {
+        .left-bar {
+            background-color: white;
+            box-shadow: 0px 3px 8px #888888;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            .bar-name {
+                font-family: 'utmavo';
+                text-transform: uppercase;
+                text-align: center;
+                background-color: $main-color;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 5px 0;
+            }
+            .title-text {
+                font-family: 'utmavo';
+                border-bottom: solid 1px black;
+                margin: auto 10px;
+                padding-top: 8px;
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+                color: $main-color;
+            }
+            .normal-text {
+                font-family: Myriad Pro;
+                border-bottom: solid 1px black;
+                margin: auto 10px;
+                padding-top: 8px;
+                font-size: 18px;
+                &::before {
+                    content: "";
+                    width: 22px;
+                    height: 12px;
+                    display: inline-block;
+                    background-image: url(../images/icon/list-icon.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+    .right-part {
+        .photo-slider {
+            border-bottom: $main-color solid 1.5px;
+            padding-bottom: 30px;
+            .w3-content {
+                max-width: 800px;
+            }
+
+            .w3-center {
+                width: 100%;
+            }
+
+            .mySlides {
+                display: none;
+                height: 400px;
+                width: 100%;
+            }
+
+            .w3-left, .w3-right, .w3-badge {
+                cursor: pointer
+            }
+
+            .w3-badge {
+                height: 13px;
+                width: 13px;
+                padding: 0
+            }
+        }
+        .prod-galaxy {
+            .title-block {
+                font-family: 'utmavo';
+                font-size: 18px;
+                color: $main-color;
+                padding: 25px 0 8px 0;
+                span {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+            .change-padding-margin {
+                margin-left: -10px;
+                margin-right: -10px;
+                .col-4 {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+            .prod-elms {
+                margin: 10px auto;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                .photo-area {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: 180px;
+                    }
+                    .name-prod {
+                        font-family: 'utmavo';
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: $main-color;
+                        font-size: 15px;
+                        padding: 2px 0;
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        background-color: rgba(59, 55, 55, 0.67);
+                    }
+                }
+                .text-area {
+                    background: white;
+                    padding: 5px;
+                    height: 100px;
+                    .desc-prod {
+                        font-family: Myriad Pro;
+                        height: 82%;
+                        overflow: hidden;
+                        font-size: 13px;
+                    }
+                    .xem-them {
+                        text-align: right;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
