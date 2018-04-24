@@ -34,7 +34,7 @@ class Header extends React.Component {
                     <div className="row header-row">
                         <div className="col-4 head-logo">
                             <a href="#">
-                                <img src={logo} alt="logo" />
+                                <img src="https://www.dropbox.com/s/6lriv643ixbwyll/logo.jpg?raw=1" alt="logo" />
                             </a>
                         </div>
                         <div className="col-8 head-bar">
