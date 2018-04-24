@@ -54,12 +54,12 @@ class PricePage extends Component {
                                 </div>
                                 <br />
                                 <div>
-                                    <table className="tg tb-baogia" style="undefined;table-layout: fixed; width: 672px">
+                                    <table className="tg tb-baogia" style={{undefined, tableLayout: "fixed", width: "672px"}}>
                                         <colgroup>
-                                            <col style="width: 264px" />
-                                            <col style="width: 153px" />
-                                            <col style="width: 129px" />
-                                            <col style="width: 126px" />
+                                            <col style={{width: "264px"}} />
+                                            <col style={{width: "153px"}} />
+                                            <col style={{width: "129px"}} />
+                                            <col style={{width: "126px"}} />
                                         </colgroup>
                                         <tr>
                                             <th className="tg-oy06" rowspan="2">SẢN PHẨM
@@ -118,12 +118,12 @@ class PricePage extends Component {
                                 </div>
                                 <br />
                                 <div>
-                                    <table className="tg tb-baogia" style="undefined;table-layout: fixed; width: 669px">
+                                    <table className="tg tb-baogia" style={{undefined, tableLayout: "fixed", width: "669px"}}>
                                         <colgroup>
-                                            <col style="width: 264px" />
-                                            <col style="width: 180px" />
-                                            <col style="width: 129px" />
-                                            <col style="width: 96px" />
+                                            <col style={{width: "264px"}} />
+                                            <col style={{width: "180px"}} />
+                                            <col style={{width: "129px"}} />
+                                            <col style={{width: "96px"}} />
                                         </colgroup>
                                         <tr>
                                             <th className="tg-oy06" rowspan="2">SẢN PHẨM
