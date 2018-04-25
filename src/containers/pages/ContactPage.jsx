@@ -18,13 +18,13 @@ class ContactPage extends Component {
 					<div className="container">
 						<div className="row wrap" id="lienhe1">
 							<div className="col-4">
-								<i className="fas fa-map-marker-alt"></i> 329 Hoàng Công Chất, Từ Liêm, Hà Nội
+								<i className="fa fa-map-marker-alt"></i> 329 Hoàng Công Chất, Từ Liêm, Hà Nội
                             </div>
 							<div className="col-4">
-								<i className="fas fa-envelope"></i> quangcao365.ad@gmail.com
+								<i className="fa fa-envelope"></i> quangcao365.ad@gmail.com
                             </div>
 							<div className="col-4">
-								<i className="fas fa-phone"></i> Mr.Dương: 097 611 8623
+								<i className="fa fa-phone"></i> Mr.Dương: 097 611 8623
                             </div>
 						</div>
 					</div>
