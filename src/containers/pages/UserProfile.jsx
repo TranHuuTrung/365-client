@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
 import { MasterLayout } from '../../components/layouts';
-import avatar from '../../assets/images/avatar.jpg'
+// import avatar from '../../assets/images/avatar.jpg'
 
 class UserProfile extends Component {
 	state = {

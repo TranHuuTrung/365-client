@@ -33,7 +33,7 @@ class Header extends React.Component {
                 <div className="container">
                     <div className="row header-row">
                         <div className="col-4 head-logo">
-                            <a href="#">
+                            <a href="">
                                 <img src={logo} alt="logo" />
                             </a>
                         </div>

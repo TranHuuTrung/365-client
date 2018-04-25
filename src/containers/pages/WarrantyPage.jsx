@@ -3,11 +3,15 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { MasterLayout } from '../../components/layouts';
 import { ContactMe } from '../../components/elements';
 
 class WarrantyPage extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         return (
             <MasterLayout>

@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import {
     Carousel,
     CarouselItem,
-    CarouselControl,
     CarouselIndicators,
-    CarouselCaption
 } from 'reactstrap';
 
 const importAll = (r) => {
     let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    r.keys().map((item, index) => { return images[item.replace('./', '')] = r(item); });
     return images;
 }
 
