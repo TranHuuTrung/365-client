@@ -6,6 +6,7 @@ import PricePage from './PricePage';
 import WarrantyPage from './WarrantyPage';
 import UserLogin from './UserLogin';
 import UserProfile from './UserProfile';
+import ClientReport from './ClientReport';
 
 export {
     HomePage,
@@ -16,4 +17,5 @@ export {
     WarrantyPage,
     UserLogin,
     UserProfile,
+    ClientReport,
 };

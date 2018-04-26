@@ -10,7 +10,7 @@ import { MasterLayout } from '../../components/layouts';
 
 const importAll = (r) => {
     let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    r.keys().map((item, index) => { return images[item.replace('./', '')] = r(item); });
     return images;
 }
 
@@ -55,12 +55,12 @@ class HomePage extends Component {
         function shiftSlide(direction, id) {
             var carouselProd = $(`${id}`);
             if (direction === 1) {
-                var slideWidth = $(`${id} .slide:first`).width() + $(`${id} .slide:nth-child(2)`).width() + $(`${id} .slide:nth-child(3)`).width();
+                var slideWidth1 = $(`${id} .slide:first`).width() + $(`${id} .slide:nth-child(2)`).width() + $(`${id} .slide:nth-child(3)`).width();
     
                 $(document).off('mouseup')
                 carouselProd.off('mousemove')
                     .addClass('transition')
-                    .css('transform', 'translateX(' + (slideWidth) + 'px)');
+                    .css('transform', 'translateX(' + (slideWidth1) + 'px)');
                 setTimeout(function () {
                     $(`${id} .slide:first`).before($(`${id} .slide:last`));
                     carouselProd.removeClass('transition')
@@ -68,12 +68,12 @@ class HomePage extends Component {
                 }, 700)
     
             } else if (direction === -1) {
-                var slideWidth = $(`${id} .slide:first`).width();
+                var slideWidth2 = $(`${id} .slide:first`).width();
     
                 $(document).off('mouseup')
                 carouselProd.off('mousemove')
                     .addClass('transition')
-                    .css('transform', 'translateX(' + (-slideWidth) + 'px)');
+                    .css('transform', 'translateX(' + (-slideWidth2) + 'px)');
                 setTimeout(function () {
                     $(`${id} .slide:last`).before($(`${id} .slide:first`));
                     $(`${id} .slide:last`).before($(`${id} .slide:first`));
@@ -165,7 +165,7 @@ class HomePage extends Component {
                                                 nét, màu sắc bền vững.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@ class HomePage extends Component {
                                                 làm cho những bộ chữ trên cao.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +194,7 @@ class HomePage extends Component {
                                                 Thường được dùng cho biển hiệu vừa và lớn ngoài trời, có khả năng chịu nhiệt cao, màu sắc bền bỉ.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@ class HomePage extends Component {
                                                 Ưu điểm có độ bóng cao, thể hiện tối đa hình ảnh, chất lượng ánh sáng đều.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -223,7 +223,7 @@ class HomePage extends Component {
                                                 vệ mực in.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -237,7 +237,7 @@ class HomePage extends Component {
                                                 Biển treo trần hay còn gọi là biển phân khu. Chất liệu Aluinium hoặc Mica
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -252,7 +252,7 @@ class HomePage extends Component {
                                                 ...
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -267,7 +267,7 @@ class HomePage extends Component {
                                                 cá nhân, tổ chức.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -281,7 +281,7 @@ class HomePage extends Component {
                                                 Chúng tôi đã có nhiều kinh nghiệm dán kính, decal trang trí văn phòng và công trình quảng cáo
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -297,7 +297,7 @@ class HomePage extends Component {
                                                 dàng thay thế hình ảnh và tiết kiệm điện
                                                 </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -311,7 +311,7 @@ class HomePage extends Component {
                                                 Chất liệu tôn lá dày 1.2mm có độ bền cao, khả năng chịu nhiệt tốt chỉ thích hợp làm cho những bộ chữ trên cao.
                                             </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -325,7 +325,7 @@ class HomePage extends Component {
                                                 Chúng tôi đã có nhiều kinh nghiệm dán kính, decal trang trí văn phòng và công trình quảng cáo
                                 </div>
                                             <div className="xem-them">
-                                                <a href="#">Xem Thêm...</a>
+                                                <a href="">Xem Thêm...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -451,7 +451,7 @@ class HomePage extends Component {
                     <div className="bottom-part" >
                         <div className="row">
                             <div className="col-3 facebook-area">
-                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAdveDesign%2F&tabs=page&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                <iframe title="faceBook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAdveDesign%2F&tabs=page&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                                     width="340" height="214" style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameBorder="0" allowtransparency="true"
                                     allow="encrypted-media"></iframe>
                             </div>

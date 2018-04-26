@@ -60,7 +60,7 @@ class UserLogin extends Component {
 
         this.props.actions.userLogin(this.state.form)
             .then(() => {
-                this.props.history.push('/home');
+                this.props.history.push('/profile');
             })
             .catch(err => {
                 this.setState({

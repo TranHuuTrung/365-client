@@ -17,12 +17,12 @@ class Footer extends React.Component {
                             <div className="title-ft">Liên hệ:</div>
                             <div className="content-ft">
                                 <li className="no-deco">
-                                    <i className="fas fa-map-marker-alt"></i> 329 Hoàng Công Chất
+                                    <i className="fa fa-map-marker-alt"></i> 329 Hoàng Công Chất
                                     <br /> - Bắc Từ Liêm Hà Nội</li>
                                 <li className="no-deco">
-                                    <i className="fas fa-phone"></i> 097 611 8623</li>
+                                    <i className="fa fa-phone"></i> 097 611 8623</li>
                                 <li className="no-deco">
-                                    <i className="fas fa-envelope"></i> quangcao365.ad@gmail.com</li>
+                                    <i className="fa fa-envelope"></i> quangcao365.ad@gmail.com</li>
                             </div>
                         </div>
                         <div className="col-3">

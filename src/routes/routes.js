@@ -7,6 +7,7 @@ import {
     WarrantyPage,
     UserLogin,
     UserProfile,
+    ClientReport,
   } from '../containers/pages';
   
   import App from '../containers/App';
@@ -59,6 +60,11 @@ import {
           component: UserProfile,
           exact: true,
           path: '/profile'
+        },
+        {
+          component: ClientReport,
+          exact: true,
+          path: '/report'
         },
       ]
     }

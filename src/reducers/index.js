@@ -1,6 +1,6 @@
 import auth from './auth';
 import users from './users';
-import books from './books';
+import report from './report';
 import notification from './notification';
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 const appReducer = combineReducers({
   auth,
   users,
-  books,
+  report,
   notification,
   routing: routerReducer
 });

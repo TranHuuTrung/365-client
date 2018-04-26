@@ -5,9 +5,9 @@ let getToken = () => {
     const cookies = new Cookies();
     let auth = cookies.get('authState').token || {};
     let header = {
-        "Uid": auth['uid'],
-        "Access-token": auth['access-token'],
-        "Client": auth['client']
+        "uid": auth['uid'],
+        "access-token": auth['access-token'],
+        "client": auth['client']
     }
 
     return header;
@@ -24,6 +24,26 @@ export const userLogin = (data) => (dispatch, getState) => dispatch({
         }
     }
 });
+
+export const getClientReport = () => (dispatch, getState) => dispatch({
+    types: [ types.API_REQUEST_SEND, types.GET_CLIENT_REPORT, types.API_REQUEST_ERROR ],
+    payload: {
+        request: {
+            url: '/reports',
+            method: 'GET',
+            headers: getToken(),
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
 
 export const userLogout = () => (dispatch, getState) => dispatch({
     types: [ types.API_REQUEST_SEND, types.USER_LOGOUT, types.API_REQUEST_ERROR ],

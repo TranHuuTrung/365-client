@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { MasterLayout } from '../../components/layouts';
 
 class ContactPage extends Component {
@@ -12,19 +12,19 @@ class ContactPage extends Component {
 			<MasterLayout active='contact'>
 				<section>
 					<div>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8856.580165777508!2d105.76469970421!3d21.043356491161294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454c43099bf19%3A0x7e69cbe3e4c9de1b!2zMzI5IEhvw6BuZyBDw7RuZyBDaOG6pXQsIFBow7ogRGnhu4VuLCBU4burIExpw6ptLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1523904292860"
+						<iframe title= "mapCustom" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8856.580165777508!2d105.76469970421!3d21.043356491161294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454c43099bf19%3A0x7e69cbe3e4c9de1b!2zMzI5IEhvw6BuZyBDw7RuZyBDaOG6pXQsIFBow7ogRGnhu4VuLCBU4burIExpw6ptLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1523904292860"
 							width="100%" height="300" frameBorder="0" style={{ border: "0" }} allowFullScreen></iframe>
 					</div>
 					<div className="container">
 						<div className="row wrap" id="lienhe1">
 							<div className="col-4">
-								<i className="fas fa-map-marker-alt"></i> 329 Hoàng Công Chất, Từ Liêm, Hà Nội
+								<i className="fa fa-map-marker-alt"></i> 329 Hoàng Công Chất, Từ Liêm, Hà Nội
                             </div>
 							<div className="col-4">
-								<i className="fas fa-envelope"></i> quangcao365.ad@gmail.com
+								<i className="fa fa-envelope"></i> quangcao365.ad@gmail.com
                             </div>
 							<div className="col-4">
-								<i className="fas fa-phone"></i> Mr.Dương: 097 611 8623
+								<i className="fa fa-phone"></i> Mr.Dương: 097 611 8623
                             </div>
 						</div>
 					</div>

@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { MasterLayout } from '../../components/layouts';
 
 class IntroPage extends Component {

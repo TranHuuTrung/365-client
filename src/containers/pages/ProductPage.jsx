@@ -3,18 +3,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { MasterLayout } from '../../components/layouts';
 import { ContactMe, CarouselCustom } from '../../components/elements';
 
-const importAll = (r) => {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-}
+// const importAll = (r) => {
+//     let images = {};
+//     r.keys().map((item, index) => { return images[item.replace('./', '')] = r(item); });
+//     return images;
+// }
 
-const images = importAll(require.context('../../assets/images/home-page', false, /\.(png|jpe?g|svg)$/));
+// const images = importAll(require.context('../../assets/images/home-page', false, /\.(png|jpe?g|svg)$/));
 
 class ProductPage extends Component {
    
@@ -101,7 +101,7 @@ class ProductPage extends Component {
 														nét, màu sắc bền vững.
                                                     </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -117,7 +117,7 @@ class ProductPage extends Component {
 														Biển Aluminium chữ nổi có tính thẩm mỹ và độ bền cao là sựa lựa chọn của nhiều khách hàng khi đến với chúng tôi.
                                                     </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -134,7 +134,7 @@ class ProductPage extends Component {
 														cá nhân, tổ chức.
                           </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -151,7 +151,7 @@ class ProductPage extends Component {
 														làm cho những bộ chữ trên cao.
                           </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -167,7 +167,7 @@ class ProductPage extends Component {
 														Decal luôn là sản phẩm thuận tiện cho quảng bá hình ảnh và thương hiệu của mỗi công ty, tổ chức.
                           </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -183,7 +183,7 @@ class ProductPage extends Component {
 														Biển Mica cho độ bóng cao mang lại chất lượng sản phẩm rõ nét.
                           </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -199,7 +199,7 @@ class ProductPage extends Component {
 														Ưu điểm có độ bền cao, dễ thi công là sựa lựa chọn của nhiều khách hàng.
                           </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -215,7 +215,7 @@ class ProductPage extends Component {
 														Chất liệu tôn lá dày 1.2mm có độ bền cao, chống chịu thời tiết khắc nghiệt thích hợp làm cho những bộ chữ trên cao.
                                                     </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
@@ -232,7 +232,7 @@ class ProductPage extends Component {
 														cả khi trời sáng.
                                                     </div>
 													<div className="xem-them">
-														<a href="#">Xem Thêm...</a>
+														<a href="">Xem Thêm...</a>
 													</div>
 												</div>
 											</div>
