@@ -438,7 +438,7 @@ class HomePage extends Component {
                                         </div>
                                         <div className="col-12" href="gioithieu.html">
                                             <img src={iconImg['list-icon.png']} alt="" />
-                                            <a href="baohanh.html">DỊCH VỤ BẢO HÀNH</a>
+                                            <Link to={'warranty'}>DỊCH VỤ BẢO HÀNH</Link>
                                         </div>
                                     </div>
                                 </div>
