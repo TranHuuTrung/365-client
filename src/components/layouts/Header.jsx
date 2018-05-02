@@ -67,15 +67,15 @@ class Header extends React.Component {
                                             {this.state.showDown &&
                                                 <ul className="dropdown-menu-custom">
                                                     <li>
-                                                        <Link to={'/profile'}>
+                                                        <Link to={'profile'}>
                                                             <div>
                                                                 Profile<i className="si si-user pull-right"></i>
                                                             </div>
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link to={'/profile'} onClick={() => this.props.actions.userLogout()}>
-                                                            <div>
+                                                        <Link to={'login'} onClick={() => this.props.actions.userLogout()}>
+                                                            <div onClick={() => this.props.actions.userLogout()}>
                                                                 Log out<i className="si si-logout pull-right"></i>
                                                             </div>
                                                         </Link>

@@ -11,6 +11,7 @@
     "localforage": "^1.7.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-avatar-editor": "^11.0.2",
     "react-cookie": "^2.1.4",
     "react-dom": "^16.3.2",
     "react-modal": "^3.3.2",

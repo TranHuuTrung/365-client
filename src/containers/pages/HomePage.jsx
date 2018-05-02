@@ -416,11 +416,11 @@ class HomePage extends Component {
                                         <div className="col-12">
                                             <img src={iconImg['list-icon.png']} alt="" /> HOTLINE 24/7</div>
                                         <div className="col-12">
-                                            <img src={iconImg['list-icon.png']} alt="" />Kinh Doanh: 097 611 8623</div>
+                                            <img src={iconImg['list-icon.png']} alt="" />Kinh Doanh: {this.props.phoneInfo.kinh_doanh}</div>
                                         <div className="col-12">
-                                            <img src={iconImg['list-icon.png']} alt="" />Kỹ Thuật: 091619 5705</div>
+                                            <img src={iconImg['list-icon.png']} alt="" />Kỹ Thuật: {this.props.phoneInfo.ky_thuat}</div>
                                         <div className="col-12">
-                                            <img src={iconImg['list-icon.png']} alt="" />Thiết Kế: 01652 755 095</div>
+                                            <img src={iconImg['list-icon.png']} alt="" />Thiết Kế: {this.props.phoneInfo.thiet_ke}</div>
                                         <div className="col-12">
                                             <img src={iconImg['list-icon.png']} alt="" />quangcao365.ad@gmail.com</div>
                                     </div>
@@ -513,6 +513,7 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = state => ({
+    phoneInfo: state.generalInfo.phoneInfo || {},
 });
 
 const mapDispatchToProps = dispatch => ({

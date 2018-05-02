@@ -13934,10 +13934,18 @@ footer {
     font-family: 'utmavo';
     font-size: 18px;
     color: #f25c2a;
-    padding: 25px 0 8px 0; }
+    padding: 25px 0 8px 0;
+    position: relative; }
     .products-page .right-part .prod-galaxy .title-block span {
       font-size: 20px;
       font-weight: bold; }
+    .products-page .right-part .prod-galaxy .title-block button {
+      background: #f25c2a;
+      position: absolute;
+      bottom: 10px;
+      right: 0; }
+      .products-page .right-part .prod-galaxy .title-block button i {
+        color: white; }
   .products-page .right-part .prod-galaxy .change-padding-margin {
     margin-left: -10px;
     margin-right: -10px; }

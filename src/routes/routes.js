@@ -59,12 +59,14 @@ import {
         {
           component: UserProfile,
           exact: true,
-          path: '/profile'
+          path: '/profile',
+          requireLogin: '/login',
         },
         {
           component: ClientReport,
           exact: true,
-          path: '/report'
+          path: '/report',
+          requireLogin: '/login',
         },
       ]
     }

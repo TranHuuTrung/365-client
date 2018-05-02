@@ -23,54 +23,25 @@ class ClientReportItem extends Component {
         })
     }
 
-    deleteBlog = (blogId) => {
-        this.props.actions.deleteBlog(blogId)
+    deleteReport = (reportId) => {
+        this.props.actions.deleteClientReport(reportId)
             .then(() => {
-                this.props.actions.getMyBlogs(this.props.auth.user);
+                this.props.actions.getClientReport(this.props.auth.user);
             });
-    }
-
-    handleChange = () => {
-        this.props.updateCheck();
     }
 
     render() {
         const { data } = this.props;
 
         return (
-            <li className="item">
-                <div className="checkbox-custom">
-                    <input type="checkbox"
-                        id={`selector${data._id}`}
-                        name={`selector${data._id}`}
-                        value=''
-                        checked={this.props.checked}
-                        onChange={this.handleChange} />
-                    <label className="checkbox-label" htmlFor={`selector${data._id}`}>&nbsp;</label>
-                    <div className="check"></div>
+            <div className="col-sm-12 col-lg-12">
+                <div className="alert alert-info alert-dismissable" >
+                    <button type="button" className="close" aria-hidden="true"
+                        onClick={() => this.deleteReport(data.id)}>&times;</button>
+                    <h3 className="font-w300 push-15">Name: {data.name}</h3>
+                    <i>Phone: {data.phone}</i>
                 </div>
-                <div className="content"
-                    onClick={() => this.toggleShow()} >
-                    <span className="title">{data.blog_title}</span>
-                    <div className="row">
-                        <span className="date-time">{data.created_at}</span>
-                        <div className="favourite">
-                            <span className="ficon-heart"></span>
-                            <span className="number">いいね!({data.likecount})</span>
-                        </div>
-                    </div>
-                    <div className="row comment-text"
-                        style={{ display: this.state.isHidden ? 'none' : 'block' }}>
-                        <p className="text">{data.blog_description}</p>
-                    </div>
-                </div>
-                <div className="group-action-button">
-                    <button className="btn-action btn-delete"
-                        onClick={() => this.deleteBlog(data._id)} >
-                        Xóa
-                    </button>
-                </div>
-            </li>
+            </div>
         )
     }
 }

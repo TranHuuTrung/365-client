@@ -32,13 +32,13 @@ class IntroPage extends Component {
                                 </div>
                                 <div id="thongtin">
                                     <div>
-                                        Kinh doanh: 097 611 8623
+                                        Kinh doanh: {this.props.phoneInfo.kinh_doanh}
                                     </div>
                                     <div>
-                                        Thiết Kế: 01652 755 095
+                                        Kỹ thuật: {this.props.phoneInfo.ky_thuat}
                                     </div>
                                     <div>
-                                        Kỹ thuật: 091 619 5705
+                                        Thiết Kế: {this.props.phoneInfo.thiet_ke}
                                     </div>
                                 </div>
                             </div>
@@ -58,6 +58,7 @@ class IntroPage extends Component {
 }
 
 const mapStateToProps = state => ({
+    phoneInfo: state.generalInfo.phoneInfo || {},
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,16 +1,16 @@
 import {
-  USER_REGISTER,
+    PHONE_INFO,
 } from '../constants/ActionTypes';
 
 let initialState = {
 };
 
-export default function user(state = initialState, action) {
+export default function generalInfo(state = initialState, action) {
   switch (action.type) {
-    case USER_REGISTER:
+    case PHONE_INFO:
       return {
         ...state,
-        userRegister: action.payload.data || []
+        phoneInfo: action.payload.data.phones || {}
       }
 
       default:

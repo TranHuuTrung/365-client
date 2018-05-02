@@ -8,6 +8,7 @@ import '../assets/styles/main.css';
 class App extends Component {
     componentDidMount = () => {
         this.props.actions.resetNotification();
+        this.props.actions.getPhoneInfo();
     }
     
     render() {

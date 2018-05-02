@@ -17,7 +17,7 @@ import {
       case GET_CLIENT_REPORT:
         return {
           ...state,
-          report: action.payload.data || []
+          report: action.payload.data.reports || []
         }
       case DELETE_CLIENT_REPORT:
         const deleteId = action.meta.previousAction.payload.id;

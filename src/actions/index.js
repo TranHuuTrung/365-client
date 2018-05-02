@@ -29,9 +29,53 @@ export const getClientReport = () => (dispatch, getState) => dispatch({
     types: [ types.API_REQUEST_SEND, types.GET_CLIENT_REPORT, types.API_REQUEST_ERROR ],
     payload: {
         request: {
-            url: '/reports',
+            url: '/reports.json',
             method: 'GET',
             headers: getToken(),
+        }
+    }
+});
+
+export const createClientReport = (data) => (dispatch, getState) => dispatch({
+    types: [ types.API_REQUEST_SEND, types.CREATE_CLIENT_REPORT, types.API_REQUEST_ERROR ],
+    payload: {
+        request: {
+            url: '/reports.json',
+            method: 'POST',
+            params: data
+        }
+    }
+});
+
+export const deleteClientReport = (id) => (dispatch, getState) => dispatch({
+    types: [ types.API_REQUEST_SEND, types.DELETE_CLIENT_REPORT, types.API_REQUEST_ERROR ],
+    payload: {
+        request: {
+            url: `/reports/${id}.json`,
+            method: 'DELETE',
+            headers: getToken(),
+        }
+    }
+});
+
+export const getPhoneInfo = () => (dispatch, getState) => dispatch({
+    types: [ types.API_REQUEST_SEND, types.PHONE_INFO, types.API_REQUEST_ERROR ],
+    payload: {
+        request: {
+            url: '/phones.json',
+            method: 'GET',
+        }
+    }
+});
+
+export const updatePhoneInfo = (data) => (dispatch, getState) => dispatch({
+    types: [ types.API_REQUEST_SEND, types.UPDATE_PHONE_INFO, types.API_REQUEST_ERROR ],
+    payload: {
+        request: {
+            url: '/users/1.json',
+            method: 'PUT',
+            headers: getToken(),
+            params: data
         }
     }
 });
