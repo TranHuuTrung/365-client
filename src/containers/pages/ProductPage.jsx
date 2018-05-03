@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
 import { Link } from 'react-router-dom';
+import AvatarEditor from 'react-avatar-editor'
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 import { MasterLayout } from '../../components/layouts';
 import { ContactMe, CarouselCustom, ModalCustom } from '../../components/elements';
@@ -11,61 +14,111 @@ import { ContactMe, CarouselCustom, ModalCustom } from '../../components/element
 class ProductPage extends Component {
     state = {
         barArray: [
-            { key: 'in_uv', text: 'in uv', bold: true },
-            { key: 'in_kinh', text: 'In Kính', bold: false },
-            { key: 'in_mica', text: 'In Mica', bold: false },
-            { key: '', text: 'In Formex', bold: false },
-            { key: '', text: 'In Aluminium', bold: false },
-            { key: '', text: 'In Gỗ', bold: false },
+            { value: 'in_uv', label: 'in uv', bold: true },
+            { value: 'in_kinh', label: 'In Kính', bold: false },
+            { value: 'in_mica', label: 'In Mica', bold: false },
+            { value: '', label: 'In Formex', bold: false },
+            { value: '', label: 'In Aluminium', bold: false },
+            { value: '', label: 'In Gỗ', bold: false },
 
-            { key: 'chu_noi', text: 'Chữ nổi', bold: true },
-            { key: 'chu_noi_mica', text: 'Chữ nổi Mica', bold: false },
-            { key: 'chu_noi_aluminium', text: 'Chữ nổi Aluminium', bold: false },
-            { key: '', text: 'Chữ nổi Inox', bold: false },
+            { value: 'chu_noi', label: 'Chữ nổi', bold: true },
+            { value: 'chu_noi_mica', label: 'Chữ nổi Mica', bold: false },
+            { value: 'chu_noi_aluminium', label: 'Chữ nổi Aluminium', bold: false },
+            { value: 'chu_noi_inox', label: 'Chữ nổi Inox', bold: false },
 
-            { key: 'in_mica', text: 'Tranh Tường', bold: true },
-            { key: '', text: 'Tranh UV', bold: false },
-            { key: '', text: 'Tranh trang trí', bold: false },
+            { value: 'tranh_tuong', label: 'Tranh Tường', bold: true },
+            { value: 'tranh_uv', label: 'Tranh UV', bold: false },
+            { value: 'tranh_trang_tri', label: 'Tranh trang trí', bold: false },
 
-            { key: 'in_mica', text: 'Biển hiệu quảng cáo', bold: true },
-            { key: '', text: 'Biển Aluminium', bold: false },
-            { key: '', text: 'Biển bạt Hiflex', bold: false },
-            { key: '', text: 'Biển bạt 3M', bold: false },
-            { key: '', text: 'Biển Mica', bold: false },
-            { key: '', text: 'Biển treo trần', bold: false },
-            { key: '', text: 'Biển vẫy', bold: false },
-            { key: '', text: 'Backdrop Quảng cáo', bold: false },
+            { value: 'bien_hieu_quang_cao', label: 'Biển hiệu quảng cáo', bold: true },
+            { value: 'bien_aluminium', label: 'Biển Aluminium', bold: false },
+            { value: 'bien_bat_hiflex', label: 'Biển bạt Hiflex', bold: false },
+            { value: '', label: 'Biển bạt 3M', bold: false },
+            { value: '', label: 'Biển Mica', bold: false },
+            { value: '', label: 'Biển treo trần', bold: false },
+            { value: '', label: 'Biển vẫy', bold: false },
+            { value: '', label: 'Backdrop Quảng cáo', bold: false },
 
-            { key: 'in_mica', text: 'Biển inox', bold: true },
-            { key: '', text: 'Biển Inox ăn mòn', bold: false },
-            { key: '', text: 'Biển chức danh', bold: false },
+            { value: 'in_mica', label: 'Biển inox', bold: true },
+            { value: '', label: 'Biển Inox ăn mòn', bold: false },
+            { value: '', label: 'Biển chức danh', bold: false },
 
-            { key: 'in_mica', text: 'Hộp đèn', bold: true },
-            { key: '', text: 'Hộp đèn siêu mỏng', bold: false },
-            { key: '', text: 'Hộp đèn UV', bold: false },
-            { key: '', text: 'Hộp đèn Led', bold: false },
+            { value: 'in_mica', label: 'Hộp đèn', bold: true },
+            { value: '', label: 'Hộp đèn siêu mỏng', bold: false },
+            { value: '', label: 'Hộp đèn UV', bold: false },
+            { value: '', label: 'Hộp đèn Led', bold: false },
 
-            { key: 'in_mica', text: 'In phun & Decal', bold: true },
-            { key: '', text: 'Decal mờ', bold: false },
-            { key: '', text: 'Decal PP', bold: false },
-            { key: '', text: 'Decal oto', bold: false },
-            { key: '', text: 'Decal trong', bold: false },
-            { key: '', text: 'Decal trang trí', bold: false },
-            { key: 'in_mica', text: 'Vật tư quảng cáo', bold: true },
-            { key: '', text: 'Nguồn & Led', bold: false },
-            { key: '', text: 'Standee & Giá chữ X', bold: false },
+            { value: 'in_mica', label: 'In phun & Decal', bold: true },
+            { value: '', label: 'Decal mờ', bold: false },
+            { value: '', label: 'Decal PP', bold: false },
+            { value: '', label: 'Decal oto', bold: false },
+            { value: '', label: 'Decal trong', bold: false },
+            { value: '', label: 'Decal trang trí', bold: false },
+            { value: 'in_mica', label: 'Vật tư quảng cáo', bold: true },
+            { value: '', label: 'Nguồn & Led', bold: false },
+            { value: '', label: 'Standee & Giá chữ X', bold: false },
         ],
-
-        productArray: [
-            { key: 'in_uv', specialProd: true },
-        ]
+        image: null,
+        articleParams: {
+            value: '',
+            title: '',
+            content: '',
+            specialProd: false
+        }
     }
 
     actionButtons = [
-		{ className: 'btn-danger', text: 'Hủy', action: () => { this.child.closeModal() } },
-		{ className: 'btn-primary', text: 'Tạo', action: () => { this.props.history.push('/books') } }
+        { className: 'btn-danger', text: 'Hủy', action: () => { this.child.closeModal() } },
+        { className: 'btn-primary', text: 'Tạo', action: () => { this.uploadArticle() } }
     ];
-    
+
+    uploadArticle = () => {
+        let formData = new FormData();
+        formData.append("image", this.state.image);
+        this.props.actions.uploadArticle(this.state.articleParams, formData);
+    }
+
+    handleChangeImage = (e) => {
+        let selectorFiles = e.target.files;
+        // let reader = new FileReader();
+        // if (!selectorFiles) return;
+        // reader.readAsDataURL(selectorFiles[0]);
+        // reader.onload = () => {
+        this.setState({ image: selectorFiles })
+        // }
+    }
+
+    handleChangeInput = (e) => {
+        const value = e.target.value;
+        const name = e.target.name;
+
+        this.setState({
+            articleParams: {
+                ...this.state.articleParams,
+                [name]: value
+            }
+        });
+    }
+
+    handleChangeSelect = (newValue) => {
+        this.setState({
+            articleParams: {
+                ...this.state.articleParams,
+                value: newValue
+            }
+        });
+    }
+
+    handleChangeCheckbox = (newValue) => {
+        let data = this.state.articleParams.specialProd;
+        this.setState({
+            articleParams: {
+                ...this.state.articleParams,
+                specialProd: !data
+            }
+        });
+    }
+
     render() {
         return (
             <MasterLayout active='product'>
@@ -73,7 +126,58 @@ class ProductPage extends Component {
                     ref={instance => { this.child = instance; }}
                     title='Tạo mới Sản phẩm'
                     actionButtons={this.actionButtons}>
-                    <h5 className="push-10 text-warning">Are you sure you want to permanently delete this book?</h5>
+                    <div className="form-group">
+                        <label htmlFor="kind-of-prod">Loại sản phẩm</label>
+                        <Select id="kind-of-prod"
+                            name="value"
+                            ref={(ref) => { this.select = ref; }}
+                            onBlurResetsInput={false}
+                            onSelectResetsInput={false}
+                            autoFocus
+                            options={this.state.barArray}
+                            simpleValue
+                            clearable={true}
+                            value={this.state.articleParams.value}
+                            onChange={this.handleChangeSelect}
+                            searchable={this.state.searchable}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="image-of-prod" style={{ width: "100%" }}>Hình ảnh sản phẩm</label>
+                        <input id="image-of-prod"
+                            type="file"
+                            onChange={this.handleChangeImage}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="css-input switch switch-sm switch-success" style={{ width: '100%', fontSize: '14px' }}>
+                            <input type="checkbox" id="register1-terms" name="register1-terms" checked={this.state.articleParams.specialProd}
+                                onChange={this.handleChangeCheckbox} /><span></span> Sản phẩm nổi bật
+                        </label>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="name-of-prod">Tên sản phẩm</label>
+                        <input id="name-of-prod"
+                            type="text"
+                            className="form-control"
+                            name="title"
+                            placeholder="Tên sản phẩm"
+                            value={this.state.articleParams.title}
+                            onChange={this.handleChangeInput}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="content-of-prod">Mô tả sản phẩm</label>
+                        <textarea
+                            id="content-of-prod"
+                            type="text"
+                            className="form-control"
+                            name="content"
+                            placeholder=""
+                            value={this.state.articleParams.content}
+                            onChange={this.handleChangeInput}>
+                        </textarea>
+                    </div>
                 </ModalCustom>
 
                 <section className="products-page">
@@ -84,7 +188,7 @@ class ProductPage extends Component {
                                     <div className="bar-name">Danh mục sản phẩm</div>
                                     {
                                         this.state.barArray.map((item, key) =>
-                                            <div className={item.bold ? 'title-text' : 'normal-text'} key={key}>{item.text}</div>
+                                            <div className={item.bold ? 'title-text' : 'normal-text'} key={key}>{item.label}</div>
                                         )
                                     }
                                 </div>
@@ -102,8 +206,8 @@ class ProductPage extends Component {
                                 <div className="prod-galaxy">
                                     <div className="title-block">
                                         Quảng cáo > <span>SẢN PHẨM NỔI BẬT</span>
-                                        <button className="btn" onClick={ () => this.child.openModal()}><i className="fa fa-plus-circle"></i></button>
-                                        
+                                        <button className="btn" onClick={() => this.child.openModal()}><i className="fa fa-plus-circle"></i></button>
+
                                     </div>
                                     <div className="row change-padding-margin">
                                         <div className="col-4">

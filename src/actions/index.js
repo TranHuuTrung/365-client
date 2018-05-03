@@ -80,6 +80,19 @@ export const updatePhoneInfo = (data) => (dispatch, getState) => dispatch({
     }
 });
 
+export const uploadArticle = (params, image) => (dispatch, getState) => dispatch({
+    types: [ types.API_REQUEST_SEND, types.UPDATE_PHONE_INFO, types.API_REQUEST_ERROR ],
+    payload: {
+        request: {
+            url: '/articles.json',
+            method: 'POST',
+            headers: getToken(),
+            params: params,
+            data: image
+        }
+    }
+});
+
 
 
 

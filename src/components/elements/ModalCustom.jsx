@@ -71,11 +71,11 @@ class ModalCustom extends Component {
                         </div>
                     </div>
                     <div className="modal-footer">
-                        {   this.props.setSkipModal &&
+                        {/* {   this.props.setSkipModal &&
                             <label className="css-input switch switch-sm switch-success" style={{width: '100%'}}>
                                 <input type="checkbox" id="register1-terms" name="register1-terms" onChange={this.handleChange}/><span></span> Don't show this modal again!
                             </label>
-                        }
+                        } */}
                         {
                             this.props.actionButtons.map((item, key) =>
                                 <button key={key} className={`btn btn-sm ${item.className}`} type="button" onClick={item.action}>{item.text}</button>
