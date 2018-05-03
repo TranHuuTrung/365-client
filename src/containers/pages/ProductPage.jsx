@@ -17,9 +17,9 @@ class ProductPage extends Component {
             { value: 'in_uv', label: 'in uv', bold: true },
             { value: 'in_kinh', label: 'In Kính', bold: false },
             { value: 'in_mica', label: 'In Mica', bold: false },
-            { value: '', label: 'In Formex', bold: false },
-            { value: '', label: 'In Aluminium', bold: false },
-            { value: '', label: 'In Gỗ', bold: false },
+            { value: 'in_formex', label: 'In Formex', bold: false },
+            { value: 'in_aluminium', label: 'In Aluminium', bold: false },
+            { value: 'in_go', label: 'In Gỗ', bold: false },
 
             { value: 'chu_noi', label: 'Chữ nổi', bold: true },
             { value: 'chu_noi_mica', label: 'Chữ nổi Mica', bold: false },
@@ -33,30 +33,30 @@ class ProductPage extends Component {
             { value: 'bien_hieu_quang_cao', label: 'Biển hiệu quảng cáo', bold: true },
             { value: 'bien_aluminium', label: 'Biển Aluminium', bold: false },
             { value: 'bien_bat_hiflex', label: 'Biển bạt Hiflex', bold: false },
-            { value: '', label: 'Biển bạt 3M', bold: false },
-            { value: '', label: 'Biển Mica', bold: false },
-            { value: '', label: 'Biển treo trần', bold: false },
-            { value: '', label: 'Biển vẫy', bold: false },
-            { value: '', label: 'Backdrop Quảng cáo', bold: false },
+            { value: 'bien_bat_3m', label: 'Biển bạt 3M', bold: false },
+            { value: 'bien_mica', label: 'Biển Mica', bold: false },
+            { value: 'bien_treo_tran', label: 'Biển treo trần', bold: false },
+            { value: 'bien_vay', label: 'Biển vẫy', bold: false },
+            { value: 'backdrop_quang_cao', label: 'Backdrop Quảng cáo', bold: false },
 
-            { value: 'in_mica', label: 'Biển inox', bold: true },
-            { value: '', label: 'Biển Inox ăn mòn', bold: false },
-            { value: '', label: 'Biển chức danh', bold: false },
+            { value: 'bien_inox', label: 'Biển inox', bold: true },
+            { value: 'bien_inox_an_mon', label: 'Biển Inox ăn mòn', bold: false },
+            { value: 'bien_chuc_danh', label: 'Biển chức danh', bold: false },
 
             { value: 'in_mica', label: 'Hộp đèn', bold: true },
-            { value: '', label: 'Hộp đèn siêu mỏng', bold: false },
-            { value: '', label: 'Hộp đèn UV', bold: false },
-            { value: '', label: 'Hộp đèn Led', bold: false },
+            { value: 'hop_den_sieu_mong', label: 'Hộp đèn siêu mỏng', bold: false },
+            { value: 'hp_den_uv', label: 'Hộp đèn UV', bold: false },
+            { value: 'hop_den_led', label: 'Hộp đèn Led', bold: false },
 
-            { value: 'in_mica', label: 'In phun & Decal', bold: true },
-            { value: '', label: 'Decal mờ', bold: false },
-            { value: '', label: 'Decal PP', bold: false },
-            { value: '', label: 'Decal oto', bold: false },
-            { value: '', label: 'Decal trong', bold: false },
-            { value: '', label: 'Decal trang trí', bold: false },
-            { value: 'in_mica', label: 'Vật tư quảng cáo', bold: true },
-            { value: '', label: 'Nguồn & Led', bold: false },
-            { value: '', label: 'Standee & Giá chữ X', bold: false },
+            { value: 'in_phun_decal', label: 'In phun & Decal', bold: true },
+            { value: 'decal_mo', label: 'Decal mờ', bold: false },
+            { value: 'decal_pp', label: 'Decal PP', bold: false },
+            { value: 'decal_oto', label: 'Decal oto', bold: false },
+            { value: 'decal_trong', label: 'Decal trong', bold: false },
+            { value: 'decal_trang_tri', label: 'Decal trang trí', bold: false },
+            { value: 'vat_tu_quang_cao', label: 'Vật tư quảng cáo', bold: true },
+            { value: 'nguon_led', label: 'Nguồn & Led', bold: false },
+            { value: 'standee_gia_chu_x', label: 'Standee & Giá chữ X', bold: false },
         ],
         image: null,
         articleParams: {
@@ -80,12 +80,12 @@ class ProductPage extends Component {
 
     handleChangeImage = (e) => {
         let selectorFiles = e.target.files;
-        // let reader = new FileReader();
-        // if (!selectorFiles) return;
-        // reader.readAsDataURL(selectorFiles[0]);
-        // reader.onload = () => {
-        this.setState({ image: selectorFiles })
-        // }
+        let reader = new FileReader();
+        if (!selectorFiles) return;
+        reader.readAsDataURL(selectorFiles[0]);
+        reader.onload = () => {
+            this.setState({ image: reader.result })
+        }
     }
 
     handleChangeInput = (e) => {
