@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 
 import { Link } from 'react-router-dom';
-import AvatarEditor from 'react-avatar-editor'
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
@@ -80,12 +79,12 @@ class ProductPage extends Component {
 
     handleChangeImage = (e) => {
         let selectorFiles = e.target.files;
-        let reader = new FileReader();
-        if (!selectorFiles) return;
-        reader.readAsDataURL(selectorFiles[0]);
-        reader.onload = () => {
-            this.setState({ image: reader.result })
-        }
+        // let reader = new FileReader();
+        // if (!selectorFiles) return;
+        // reader.readAsDataURL(selectorFiles[0]);
+        // reader.onload = () => {
+        this.setState({ image: selectorFiles })
+        // }
     }
 
     handleChangeInput = (e) => {
@@ -206,8 +205,10 @@ class ProductPage extends Component {
                                 <div className="prod-galaxy">
                                     <div className="title-block">
                                         Quảng cáo > <span>SẢN PHẨM NỔI BẬT</span>
-                                        <button className="btn" onClick={() => this.child.openModal()}><i className="fa fa-plus-circle"></i></button>
-
+                                        {
+                                            this.props.userProfile &&
+                                            <button className="btn" onClick={() => this.child.openModal()}><i className="fa fa-plus-circle"></i></button>
+                                        }
                                     </div>
                                     <div className="row change-padding-margin">
                                         <div className="col-4">
@@ -371,6 +372,7 @@ class ProductPage extends Component {
 }
 
 const mapStateToProps = state => ({
+    userProfile: state.auth.user,
 });
 
 const mapDispatchToProps = dispatch => ({

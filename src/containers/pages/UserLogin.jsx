@@ -131,8 +131,8 @@ class UserLogin extends Component {
 
                             <div className="text-center">
                                 <div className="push-10-t">I don't have any account, </div>
-                                <Link to={"./register"}>
-                                    <div> go to Register Page</div>
+                                <Link to={"home"}>
+                                    <div> go to Home Page</div>
                                 </Link>
                             </div>
 

@@ -135,3 +135,23 @@ footer {
 #product-slide {
     @include slider(65px);
 }
+
+.auth-header {
+    padding: 10px;
+    .inline {
+        float: left;
+        font-size: 18px;
+        line-height: 40px;
+        padding: 0 15px;
+        color: black;
+        cursor: pointer;
+        &:hover {
+            background: #aeaeae;
+            color: white;
+        }
+        &.active {
+            background: $main-color;
+            color: white;
+        }
+    }
+}

@@ -14,7 +14,7 @@ class PricePage extends Component {
 
     render() {
         return (
-            <MasterLayout>
+            <MasterLayout active='product'>
                 <section id="table-baohanh">
                     <div className="container">
                         <div className="table">

@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
 import propsTypes from 'prop-types';
 
-import { ClientReportItem } from '../../components/elements';
-
+import { Link } from 'react-router-dom'
 
 class ClientReport extends Component {
     static props = {
@@ -16,113 +15,74 @@ class ClientReport extends Component {
         clientReport: [],
     }
 
-    state = {
-        isAllChecked: false,
-    };
-
     componentDidMount = () => {
         this.props.actions.getClientReport();
+    }
+
+    deleteReport = (reportId) => {
+        this.props.actions.deleteClientReport(reportId)
+            .then(() => {
+                this.props.actions.getClientReport();
+            })
     }
 
     render() {
         const { clientReport } = this.props;
         return (
             <div>
-                <header id="header-navbar" className="content-mini content-mini-full">
-                    <ul className="nav-header pull-right">
-                        <li>
-                            <div className="btn-group">
-                                <button className="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
-                                    <img src="assets/img/avatars/avatar10.jpg" alt="Avatar" />
-                                    <span className="caret"></span>
-                                </button>
-                                <ul className="dropdown-menu dropdown-menu-right">
-                                    <li className="dropdown-header">Profile</li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_inbox.html">
-                                            <i className="si si-envelope-open pull-right"></i>
-                                            <span className="badge badge-primary pull-right">3</span>Inbox
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_profile.html">
-                                            <i className="si si-user pull-right"></i>
-                                            <span className="badge badge-success pull-right">1</span>Profile
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a tabIndex="-1" href="javascript:void(0)">
-                                            <i className="si si-settings pull-right"></i>Settings
-                                    </a>
-                                    </li>
-                                    <li className="divider"></li>
-                                    <li className="dropdown-header">Actions</li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_lock.html">
-                                            <i className="si si-lock pull-right"></i>Lock Account
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_login.html">
-                                            <i className="si si-logout pull-right"></i>Log out
-                                    </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <button className="btn btn-default" data-toggle="layout" data-action="side_overlay_toggle" type="button">
-                                <i className="fa fa-tasks"></i>
-                            </button>
-                        </li>
-                    </ul>
-
-
-                    <ul className="nav-header pull-left">
-                        <li className="hidden-md hidden-lg">
-                            <button className="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
-                                <i className="fa fa-navicon"></i>
-                            </button>
-                        </li>
-                        <li className="hidden-xs hidden-sm">
-                            <button className="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
-                                <i className="fa fa-ellipsis-v"></i>
-                            </button>
-                        </li>
-                        <li>
-                            <button className="btn btn-default pull-right" data-toggle="modal" data-target="#apps-modal" type="button">
-                                <i className="si si-grid"></i>
-                            </button>
-                        </li>
-                        <li className="visible-xs">
-                            <button className="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search" type="button">
-                                <i className="fa fa-search"></i>
-                            </button>
-                        </li>
-                        <li className="js-header-search header-search">
-                            <form className="form-horizontal" action="base_pages_search.html" method="post">
-                                <div className="form-material form-material-primary input-group remove-margin-t remove-margin-b">
-                                    <input className="form-control" type="text" id="base-material-text" name="base-material-text" placeholder="Search.." />
-                                    <span className="input-group-addon"><i className="si si-magnifier"></i></span>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
+                <header id="header-navbar" className="auth-header">
+                    <div>
+                        <Link to={"product"} className="inline">Edit Content</Link>
+                        <Link to={"report"} className="inline active">Client Feedback</Link>
+                        <Link to={"profile"} className="inline">Profile</Link>
+                        <Link to={"login"} className="inline" style={{ float: "right" }}>Logout</Link>
+                    </div>
                 </header>
 
-
-
-                <div className="container book-list">
-                    <div className="list-group push-30-t push-20">
-                        {
-                            clientReport.map((item, key) =>
-                                <ClientReportItem
-                                    key={key}
-                                    data={item} />
-                            )
-                        }
+                <div className="block push-30 push-30-t" style={{ minHeight: "85vh" }}>
+                    <div className="block-header" style={{ textAlign: "center" }}>
+                        <h3 className="block-title">Phản hồi của khách hàng</h3>
+                    </div>
+                    <div className="block-content">
+                        <table className="table table-striped table-vcenter" style={{ marginLeft: "0" }}>
+                            <thead>
+                                <tr>
+                                    <th>Tên</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th className="text-center">Thông điệp</th>
+                                    <th className="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    clientReport.map((item, key) =>
+                                        <tr key={key}>
+                                            <td className="font-w600">{item.name}</td>
+                                            <td>{item.phone}</td>
+                                            <td>{item.email}</td>
+                                            <td>
+                                                {item.description}
+                                            </td>
+                                            <td className="text-center">
+                                                <div className="btn-group">
+                                                    <button onClick={() => this.deleteReport(item.id)} className="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client">
+                                                        <i className="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+                <footer id="page-footer" className="content-mini content-mini-full bg-gray-lighter clearfix" style={{ minHeight: "60px", color: "#f25c2a" }}>
+                    <div className="text-center">
+                        quangcao365 website -- version 1.0
+                   </div>
+                </footer>
             </div>
         );
     }

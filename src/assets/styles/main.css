@@ -13669,6 +13669,22 @@ footer {
     #product-slide.slide-wrap #next img {
       height: 65px; }
 
+.auth-header {
+  padding: 10px; }
+  .auth-header .inline {
+    float: left;
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0 15px;
+    color: black;
+    cursor: pointer; }
+    .auth-header .inline:hover {
+      background: #aeaeae;
+      color: white; }
+    .auth-header .inline.active {
+      background: #f25c2a;
+      color: white; }
+
 .home-page .home-photo-part {
   width: 100%; }
 

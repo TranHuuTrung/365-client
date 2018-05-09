@@ -18,14 +18,14 @@ class Header extends React.Component {
     }
 
     state = {
-		showDown: false
-	}
+        showDown: false
+    }
 
-	toggleShowDown = () => {
-		this.setState({
-			showDown: !this.state.showDown
-		});
-	}
+    toggleShowDown = () => {
+        this.setState({
+            showDown: !this.state.showDown
+        });
+    }
 
     render() {
         return (
@@ -33,9 +33,9 @@ class Header extends React.Component {
                 <div className="container">
                     <div className="row header-row">
                         <div className="col-4 head-logo">
-                            <a href="">
+                            <Link to={'home'}>
                                 <img src={logo} alt="logo" />
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-8 head-bar">
                             <div className="row link-elms">
@@ -55,36 +55,28 @@ class Header extends React.Component {
                         </div>
 
                         {this.props.userProfile &&
-                            <div className="row">
-                                <h2 className="col-4 offset-4 text-center"><Link to={'/books'}>Dashboard</Link></h2>
-                                <ul className="nav-header col-4">
-                                    <div className="pull-right">
-                                        <div className="btn-group">
-                                            <button className="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button" onClick={this.toggleShowDown}>
-                                                <img src={avatar} alt="Avatar" />
-                                                <span className="caret"></span>
-                                            </button>
-                                            {this.state.showDown &&
-                                                <ul className="dropdown-menu-custom">
-                                                    <li>
-                                                        <Link to={'profile'}>
-                                                            <div>
-                                                                Profile<i className="si si-user pull-right"></i>
-                                                            </div>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link to={'login'} onClick={() => this.props.actions.userLogout()}>
-                                                            <div onClick={() => this.props.actions.userLogout()}>
-                                                                Log out<i className="si si-logout pull-right"></i>
-                                                            </div>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            }
+                            <div className="dropdown" style={{position: "absolute", right: "5px", top: "20px"}}>
+                                <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <img src={avatar} alt="" style={{width: "25px"}}/>
+                                </button>
+                                <div className="dropdown-menu" style={{right: "0", left: "auto"}}>
+                                    <Link to={'profile'} className="dropdown-item">
+                                        <div>
+                                            Profile<i className="si si-user pull-right"></i>
                                         </div>
-                                    </div>
-                                </ul>
+                                    </Link>
+                                    <Link to={'report'} className="dropdown-item">
+                                        <div>
+                                            Client report<i className="si si-bubble pull-right"></i>
+                                        </div>
+                                    </Link>
+                                    <div className="dropdown-divider"></div>
+                                    <Link to={'login'} className="dropdown-item">
+                                        <div>
+                                            Log out<i className="si si-logout pull-right"></i>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
                         }
                     </div>

@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions/';
-
-// import { MasterLayout } from '../../components/layouts';
-// import avatar from '../../assets/images/avatar.jpg'
+import { Link } from 'react-router-dom'
 
 class UserProfile extends Component {
     state = {
@@ -59,52 +57,16 @@ class UserProfile extends Component {
         const { userProfile } = this.props;
         return (
             <div>
-                <header id="header-navbar" className="content-mini content-mini-full">
-                    <ul className="nav-header pull-right">
-                        <li>
-                            <div className="btn-group">
-                                <button className="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
-                                    <img src="assets/img/avatars/avatar10.jpg" alt="Avatar" />
-                                    <span className="caret"></span>
-                                </button>
-                                <ul className="dropdown-menu dropdown-menu-right">
-                                    <li className="dropdown-header">Profile</li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_inbox.html">
-                                            <i className="si si-envelope-open pull-right"></i>
-                                            <span className="badge badge-primary pull-right">3</span>Inbox
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_profile.html">
-                                            <i className="si si-user pull-right"></i>
-                                            <span className="badge badge-success pull-right">1</span>Profile
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a tabIndex="-1" href="javascript:void(0)">
-                                            <i className="si si-settings pull-right"></i>Settings
-                                    </a>
-                                    </li>
-                                    <li className="divider"></li>
-                                    <li className="dropdown-header">Actions</li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_lock.html">
-                                            <i className="si si-lock pull-right"></i>Change password
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a tabIndex="-1" href="base_pages_login.html">
-                                            <i className="si si-logout pull-right"></i>Log out
-                                    </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                <header id="header-navbar" className="auth-header">
+                    <div>
+                        <Link to={"product"} className="inline">Edit Content</Link>
+                        <Link to={"report"} className="inline">Client Feedback</Link>
+                        <Link to={"profile"} className="inline active">Profile</Link>
+                        <Link to={"login"} className="inline" style={{ float: "right" }}>Logout</Link>
+                    </div>
                 </header>
 
-                <div className="push-30-t push-30 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 user-profile">
+                <div className="push-30-t push-30 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 user-profile" style={{ minHeight: "85vh" }}>
                     {
                         this.state.onEditing ?
                             <form onSubmit={this.handleSubmit}>
@@ -168,19 +130,14 @@ class UserProfile extends Component {
                                         <button className="btn btn-primary" onClick={() => this.toggleEditing()}><i className="fa fa-edit 2x" /></button>
                                     </div>
                                 </div>
-
-
                             </div>
                     }
                 </div>
 
-                <footer id="page-footer" className="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
-                    <div className="pull-right">
-                        Crafted with <i className="fa fa-heart text-city"></i> by <a className="font-w600" href="http://goo.gl/vNS3I" target="_blank">pixelcave</a>
-                    </div>
-                    <div className="pull-left">
-                        <a className="font-w600" href="http://goo.gl/6LF10W" target="_blank">OneUI 3.1</a> © <span className="js-year-copy">2015-18</span>
-                    </div>
+                <footer id="page-footer" className="content-mini content-mini-full bg-gray-lighter clearfix" style={{ minHeight: "60px", color: "#f25c2a" }}>
+                    <div className="text-center">
+                        quangcao365 website -- version 1.0
+                   </div>
                 </footer>
             </div>
         );

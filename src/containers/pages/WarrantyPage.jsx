@@ -14,7 +14,7 @@ class WarrantyPage extends Component {
 
     render() {
         return (
-            <MasterLayout>
+            <MasterLayout active='product'>
                 <section id="table-baohanh">
                     <div className="container">
                         <div className="table">
@@ -36,7 +36,7 @@ class WarrantyPage extends Component {
                                         <col style={{ width: "189px" }} />
                                     </colgroup>
                                     <tr>
-                                        <th className="tg-uys7" colspan="7">QUY ĐỊNH BẢO HÀNH</th>
+                                        <th className="tg-uys7" colSpan="7">QUY ĐỊNH BẢO HÀNH</th>
                                     </tr>
                                     <tr>
                                         <td className="tg-c3ow"></td>
@@ -250,7 +250,7 @@ class WarrantyPage extends Component {
                                         <col style={{ width: "188px" }} />
                                     </colgroup>
                                     <tr>
-                                        <th className="tg-uys7" colspan="7">QUY ĐỊNH BẢO HÀNH</th>
+                                        <th className="tg-uys7" colSpan="7">QUY ĐỊNH BẢO HÀNH</th>
                                     </tr>
                                     <tr>
                                         <td className="tg-uys7"></td>
@@ -366,7 +366,7 @@ class WarrantyPage extends Component {
                                         <col style={{ width: "187px" }} />
                                     </colgroup>
                                     <tr>
-                                        <th className="tg-uys7" colspan="7">QUY ĐỊNH BẢO HÀNH</th>
+                                        <th className="tg-uys7" colSpan="7">QUY ĐỊNH BẢO HÀNH</th>
                                     </tr>
                                     <tr>
                                         <td className="tg-uys7"></td>
